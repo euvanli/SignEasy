@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Language Translator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1> Sign Language to Text</h1>
+  </header>
+  <main>
+    <div class="camera-box">
+      <div id="webcam"></div>
+      <div id="prediction">Detecting...</div>
+      <a href="index.html" class="btn">Back</a>
+    </div>
+     <div class="tips-dropdown">
+    <button class="tips-toggle">📌 Tips & Guides</button>
+    <div class="tips-content">
+      <h3>Tips for Best Detection</h3>
+      <ul>
+        <li><strong>Detection:</strong> After making a sign, hold it for a few seconds so the app can translate it accurately.</li>
+        <li><strong>Lighting:</strong> Use bright, even lighting to keep your hands clear and free of shadows.</li>
+        <li><strong>Camera Angle:</strong> Keep your hands in the center of the screen for best results.</li>
+        <li><strong>Background:</strong> Choose a plain background so your signs stand out.</li>
+        <li><strong>Stability:</strong> Keep your hands steady while signing.</li>
+        <li><strong>Distance:</strong> Stay about 30–50 cm from the camera for optimal detection.</li>
+      </ul>
+    </div>
+  </div>
+  </main>
+
+  <!-- TensorFlow + Teachable Machine -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.12.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.4/dist/teachablemachine-image.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

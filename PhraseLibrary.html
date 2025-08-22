@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phrase Library</title>
+  <link rel="stylesheet" href="style.css" />
+ <style>
+  body {
+    background-color: #175d9b; /* light blue, change this to any color you want */
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <a href="Library.html" class="btn2" id="btn2">←</a>
+    <h1>Phrase Library</h1>
+  </header>
+
+  <main>
+    <ul class="list" id="phraseList" ></ul>
+
+    <div class="video-container" id="videoSection">
+      <video id="phraseVideo" controls muted></video>
+      <p id="description"></p>
+      <a href="PhraseLibrary.html" class="btn">Back</a>
+    </div>
+     
+  </main>
+
+  <script>
+    const phraseData = {
+      "Fine": {
+        title: "Fine",
+        video: "videos/Fine.mp4",
+      },
+      "Please": {
+        title: "Please",
+        video: "videos/Please.mp4",
+       
+      },
+      "Good_Morning": {
+        title: "Good Morning",
+        video: "videos/Good_Morning.mp4",
+        
+      },
+      "Good_Afternoon": {
+        title: "Good Afternoon",
+        video: "videos/Good_Afternoon.mp4",
+        
+      },
+      "Good_Evening": {
+        title: "Good Evening",
+        video: "videos/Good_Evening.mp4",
+       
+      },
+      "Good_Night": {
+        title: "Good Night",
+        video: "videos/Good_Night.mp4",
+        
+      }, 
+      "Hi": {
+        title: "Hi",
+        video: "videos/Hi.mp4",
+       
+      },
+       "No": {
+        title: "No",
+        video: "videos/No.mp4",
+        
+      },
+       "Stop": {
+        title: "Stop",
+        video: "videos/Stop.mp4",
+       
+      },
+       "Thank_You": {
+        title: "Thank You",
+        video: "videos/Thank_You.mp4",
+       
+      },
+       "Welcome": {
+        title: "Welcome",
+        video: "videos/Welcome.mp4",
+       
+      },
+       "Yes": {
+        title: "Yes",
+        video: "videos/Yes.mp4",
+       
+      },
+    };
+
+    const phraseList = document.getElementById("phraseList");
+    const video = document.getElementById("phraseVideo");
+    const desc = document.getElementById("description");
+    const section = document.getElementById("videoSection");
+    const backBtn = document.getElementById("backBtn");
+
+    // Generate phrase list
+    for (const key in phraseData) {
+      const li = document.createElement("li");
+      li.textContent = phraseData[key].title;
+      li.onclick = () => showPhrase(key);
+      phraseList.appendChild(li);
+    }
+
+    function showPhrase(phraseKey) {
+  const data = phraseData[phraseKey];
+  video.src = data.video;
+  desc.textContent = data.title;  // Shows the phrase title only
+  section.style.display = "block";
+  phraseList.style.display = "none";
+  video.play();
+}
+
+
+    // Hide video and show list again
+    backBtn.onclick = () => {
+      section.style.display = "none";
+      phraseList.style.display = "block";
+      video.pause();
+      video.currentTime = 0;
+      return false;
+    };
+  </script>
+</body>
+</html>

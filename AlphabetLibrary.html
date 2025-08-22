@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alphabet Library</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+  <header>
+    <a href="Library.html" class="btn2">←</a>
+    <h1>Alphabet Library</h1>
+  </header>
+
+  <main>
+    <ul class="list" id="alphabetList"></ul>
+
+    <div class="video-container" id="videoSection">
+      <video id="alphabetVideo" controls muted></video>
+      <p id="description"></p>
+      <br><br>
+     <a href="AlphabetLibrary.html" class="btn">Back</a>
+    </div>
+  </main>
+
+  <script>
+    // Define data for A-Z
+    const alphabetData = {};
+    for (let i = 65; i <= 90; i++) {
+      const letter = String.fromCharCode(i);
+      alphabetData[letter] = {
+        title: letter,
+        video: `videos/${letter}.mp4`
+      };
+    }
+
+    const list = document.getElementById("alphabetList");
+    const video = document.getElementById("alphabetVideo");
+    const desc = document.getElementById("description");
+    const section = document.getElementById("videoSection");
+    const backBtn = document.getElementById("backBtn");
+
+    for (const key in alphabetData) {
+      const li = document.createElement("li");
+      li.textContent = alphabetData[key].title;
+      li.onclick = () => showLetter(key);
+      list.appendChild(li);
+    }
+
+    function showLetter(letter) {
+      const data = alphabetData[letter];
+      video.src = data.video;
+      desc.textContent = `Letter: ${data.title}`;
+      section.style.display = "block";
+      list.style.display = "none";
+      video.play();
+    }
+  </script>
+</body>
+</html>

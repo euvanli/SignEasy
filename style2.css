@@ -1,0 +1,153 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+   background: linear-gradient(to bottom, #021024, #052659, #5483b3, #7da0ca, #c1e8ff);
+  color: #1c1c1e;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+header {
+  background-color: #021024;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  position: relative;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn2 {
+  background: white;
+  border-radius: 30px;
+  color: #007aff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+.app-title {
+  font-size: 2.4rem;
+  color: #007aff;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #fafafa;
+  margin-bottom: 2.5rem;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.btn {
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 90%;
+  max-width: 320px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: none;
+  color: #007aff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-decoration: none;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.4rem 3.2rem;
+  background: linear-gradient(to bottom, #063b94, #052659); /* subtle depth gradient */
+  color: #fdfeff;
+  border-radius: 48px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 1000;
+  box-shadow: 0 6px 0 #031b42, 0 8px 15px rgba(0, 0, 0, 0.3); /* solid + soft shadow */
+  transition: all 0.2s ease;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+/* ✅ Corrected Selector and Layout for Alphabet Grid */
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 5 equal columns */
+  gap: 16px;
+  list-style: none;
+  padding: 20px;
+  margin: auto;
+  max-width: 1000px;
+  
+}
+
+.list li {
+  background-color: #b8c7d8;
+  color: rgb(76, 60, 219);
+  padding: 20px;
+  border-radius: 35px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+   background: linear-gradient(to bottom, #063b94, #052659); /* subtle depth gradient */
+  color: #fdfeff;
+  border-radius: 48px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 1000;
+  box-shadow: 0 6px 0 #031b42, 0 8px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.list li:hover {
+  background-color: #005bb5;
+  color: white;
+}
+#videoSection {
+  display: none; /* default hidden */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+#alphabetVideo {
+  width: 90%;
+  max-width: 480px;
+
+  object-fit: contain; /* Ensures full video fits in view */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin: 1rem 0;
+}
+
+#description {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin-top: 1rem;
+}
